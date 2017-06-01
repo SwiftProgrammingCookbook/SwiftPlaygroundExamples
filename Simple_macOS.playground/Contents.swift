@@ -1,8 +1,9 @@
-//: Playground - noun: a place where people can play
-
+//: # Bar Chart - iOS
 import PlaygroundSupport
 import Cocoa
 
+//: ## Color
+//: Color as a struct can produces UIColor on demand
 struct Color {
     let red: CGFloat
     let green: CGFloat
@@ -14,10 +15,19 @@ struct Color {
     }
 }
 
+/*:
+ ## Bar
+ Simple struct to hold details aboout a bar in a bar chart
+ */
 struct Bar {
     var value: Float
     var color: Color
 }
+
+/*:
+ ## BarView
+ View that that will display the value of a bar in a chart
+ */
 
 class BarView: NSView {
     
@@ -40,6 +50,13 @@ class BarView: NSView {
     }
 }
 
+/*:
+ ## BarChart
+ View that that will display at bar chart
+ 
+ ### How to use
+ Add `Bar`s to the `bars` array to add them to the chart
+ */
 class BarChart: NSView {
     
     let color: NSColor
@@ -98,6 +115,13 @@ class BarChart: NSView {
     }
 }
 
+/*:
+ ## Usage
+ 
+ * Create Bar Chart
+ * Create Bars and add to chart
+ * Make Bar Chart the LiveView
+ */
 let barView = BarChart(frame: CGRect(x: 0, y: 0, width: 300, height: 300), color: .white)
 PlaygroundPage.current.liveView = barView
 
