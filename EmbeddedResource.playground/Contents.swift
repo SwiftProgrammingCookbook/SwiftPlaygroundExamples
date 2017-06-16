@@ -34,7 +34,7 @@ class BarView: UIView {
     }
     
     private func setupTexture() {
-        let textureImage = UIImage(named: "texture")!
+        guard let textureImage = UIImage(named: "texture") else { return }
         let textureColor = UIColor(patternImage: textureImage)
         let textureView = UIView(frame: CGRect(origin: .zero, size: bounds.size))
         textureView.backgroundColor = textureColor

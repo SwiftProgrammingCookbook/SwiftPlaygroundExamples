@@ -59,7 +59,7 @@ class BarChart: UIView {
             
             var barViews = [BarView]()
             
-            let barCount: Int = bars.count
+            let barCount = CGFloat(bars.count)
             
             // Calculate the max value before calculating size
             for bar in bars {
@@ -69,7 +69,7 @@ class BarChart: UIView {
             var xOrigin: CGFloat = interBarMargin
             
             for bar in bars {
-                let width = (frame.size.width - (interBarMargin * CGFloat(barCount+1))) / CGFloat(barCount)
+                let width = (frame.width - (interBarMargin * (barCount+1))) / barCount
                 let height = barHeight(forValue: bar.value)
                 let rect = CGRect(x: xOrigin, y: bounds.height - height, width: width, height: height)
                 let view = BarView(frame: rect, color: bar.color.displayColor)
