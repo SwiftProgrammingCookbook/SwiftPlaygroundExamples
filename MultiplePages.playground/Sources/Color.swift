@@ -14,7 +14,10 @@ public struct Color {
     }
     
     var displayColor: UIColor {
-        return UIColor(colorLiteralRed: red, green: green, blue: blue, alpha: alpha)
+        return UIColor(red: CGFloat(red),
+                       green: CGFloat(green),
+                       blue: CGFloat(blue),
+                       alpha: CGFloat(alpha))
     }
 }
 
